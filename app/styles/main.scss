@@ -21,9 +21,10 @@ body {
 }
 
 .crack {
+  border: solid 1px $dark;
   border-radius: rem(5);
   position: relative;
-  height: rem(500);
+  height: rem(490);
   width: 80%;
   min-width: rem(600);
   overflow: hidden;
@@ -58,6 +59,10 @@ header {
     font-size: rem(18);
     margin: 0;
     text-align: left;
+  }
+
+  .search {
+    margin-left: rem(70);
   }
 
   a {

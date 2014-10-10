@@ -31,6 +31,12 @@
       <div class="crack">
         <header>
           <a href="#"><h1>crack</h1></a>
+          {{input
+              class="search"
+              type="search"
+              placeholder="search"
+              value=searchTerm
+          }}
           <a href="#">NicerHugs</a>
           <a href="#">logout</a>
         </header>
@@ -73,7 +79,7 @@
             </section><!--room-->
             <section class="chat-list">
               <ul>
-                {{#each chats}}
+                {{#each}}
                   <li class="message">
                     <h3 class="username">{{username}}:</h3>
                     <p class="body">{{message}}</p>
@@ -112,6 +118,7 @@
           <script src="scripts/router.js"></script>
           <script src="scripts/controllers/application_controller.js"></script>
           <script src="scripts/controllers/login_controller.js"></script>
+          <script src="scripts/controllers/index_controller.js"></script>
 
         <!-- endbuild -->
 </body>
