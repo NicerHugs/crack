@@ -31,14 +31,13 @@
       <div class="crack">
         <header>
           <a href="#"><h1>crack</h1></a>
-          {{input
-              class="search"
-              type="search"
-              placeholder="search"
-              value=searchTerm
-          }}
-          <a href="#">NicerHugs</a>
-          <a href="#">logout</a>
+          {{#if currentUser}}
+            {{input placeholder="search chats" class="search" type="text" action="search" on="key-up"}}
+            <a class="logout" href="#/login" {{action "logout"}}>logout</a>
+            <a class="logged-in-user" href="#">{{currentUser.username}}</a>
+          {{else}}
+            {{#link-to "login"}}login{{/link-to}}
+          {{/if}}
         </header>
         {{outlet}}
       </div><!--crack-->
@@ -48,7 +47,7 @@
       <main class="login">
         <h1>Welcome to Crack!</h1>
         <p>Like Slack, but more addicting</p>
-        <h2>Please create a username to start chatting</h2>
+        <h2>Create a username to start chatting</h2>
         {{
           input
             type="text"
@@ -83,7 +82,7 @@
                   <li class="message">
                     <h3 class="username">{{username}}:</h3>
                     <p class="body">{{message}}</p>
-                    <span class="timestamp">{{timestamp}}</span>
+                    <span class="timestamp">{{displayTime}}</span>
                   </li>
                 {{/each}}
               </ul>
@@ -102,13 +101,13 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/handlebars/handlebars.js"></script>
     <script src="../bower_components/ember/ember.js"></script>
     <script src="../bower_components/ember-data/ember-data.js"></script>
     <script src="../bower_components/firebase/firebase.js"></script>
     <script src="../bower_components/emberfire/dist/emberfire.js"></script>
-
-
+    <script src="../bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

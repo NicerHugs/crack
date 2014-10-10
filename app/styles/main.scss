@@ -51,27 +51,31 @@ ul {
 header {
   background: $dark;
   border-bottom: solid 1px $dark;
-  height: rem(40);
+  height: rem(45);
   padding: rem(10);
   position: relative;
-
-  h1 {
-    font-size: rem(18);
-    margin: 0;
-    text-align: left;
-  }
 
   .search {
     margin-left: rem(70);
   }
 
   a {
+    color: #fff;
     display: inline-block;
     float: right;
+
+    &:hover {
+      color: $light;
+    }
+
+    &.logged-in-user {
+      margin-right: rem(20);
+    }
 
     h1 {
       position: absolute;
       left: rem(10);
+      font-size: rem(20);
     }
   }
 }
@@ -81,11 +85,28 @@ header {
 //==============================================================================
 
 .login {
+  height: rem(450);
+  background: $light;
+  padding-top: rem(60);
+
   input {
+    border: solid 1px $medium;
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 3px $medium;
     display: block;
-    width: 25%;
     height: rem(30);
     margin: rem(10) auto;
+    outline: none;
+    text-align: center;
+    width: rem(200);
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    margin-top: rem(60);
   }
 }
 
@@ -99,7 +120,16 @@ header {
   float: left;
   height: rem(450);
   overflow: scroll;
+  padding: rem(10);
   width: 25%;
+
+  ul {
+    margin-top: rem(10);
+  }
+
+  li {
+    margin-bottom: rem(5);
+  }
 }
 
 //==============================================================================
@@ -116,7 +146,8 @@ header {
 .room-name {
   background: $light;
   border-bottom: solid 1px, $dark;
-  height: rem(60);
+  height: rem(65);
+  padding: rem(10);
 
   span {
     display: block;
@@ -124,9 +155,12 @@ header {
   }
 }
 
+//==============================================================================
+                                //Chat List
+//==============================================================================
+
 .chat-list {
-  // margin-bottom: rem0);
-  max-height: rem(340);
+  max-height: rem(330);
   overflow: scroll;
 }
 
@@ -144,7 +178,7 @@ header {
   }
 
   .username {
-    width: 25%;
+    width: 30%;
     float: left;
   }
 
@@ -155,17 +189,19 @@ header {
   }
 
   .timestamp {
+    color: $dark;
     display: block;
     float: left;
+    font-size: .7rem;
     text-align: right;
-    width: 15%;
+    width: 10%;
   }
 }
 
 .new-message {
   background: $dark;
   bottom: 0;
-  height: rem(50);
+  height: rem(55);
   padding: rem(10);
   position: absolute;
   width: 100%;

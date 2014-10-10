@@ -12,7 +12,8 @@
     "ember-data": "1.0.0-beta.5",
     "handlebars": "~2.0.0",
     "firebase": "~1.1.1",
-    "emberfire": "~1.2.6"
+    "emberfire": "~1.2.6",
+    "moment": "~2.8.3"
   },
   "resolutions": {
     "handlebars": ">= 1.0.0 < 2.0.0",
