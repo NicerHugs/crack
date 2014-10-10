@@ -10,9 +10,12 @@
     "normalize-css": "~3.0.1",
     "ember": "~1.7.0",
     "ember-data": "1.0.0-beta.5",
-    "handlebars": "~2.0.0"
+    "handlebars": "~2.0.0",
+    "firebase": "~1.1.1",
+    "emberfire": "~1.2.6"
   },
   "resolutions": {
-    "handlebars": ">= 1.0.0 < 2.0.0"
+    "handlebars": ">= 1.0.0 < 2.0.0",
+    "firebase": "~1.1.1"
   }
 }

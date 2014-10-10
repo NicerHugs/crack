@@ -1,3 +1,181 @@
 // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
+
+//==============================================================================
+                                //mixins
+//==============================================================================
+
+$vdark: #343434;
+$dark: #999D97;
+$medium: #e0e0e0;
+$light: #e8e8e8;
+
+//==============================================================================
+                                //Global
+//==============================================================================
+
+body {
+  overflow: hidden;
+  color: $vdark;
+}
+
+.crack {
+  border-radius: rem(5);
+  position: relative;
+  height: rem(500);
+  width: 80%;
+  min-width: rem(600);
+  overflow: hidden;
+  margin: rem(20) auto;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+//==============================================================================
+                                //Header
+//==============================================================================
+
+header {
+  background: $dark;
+  border-bottom: solid 1px $dark;
+  height: rem(40);
+  padding: rem(10);
+  position: relative;
+
+  h1 {
+    font-size: rem(18);
+    margin: 0;
+    text-align: left;
+  }
+
+  a {
+    display: inline-block;
+    float: right;
+
+    h1 {
+      position: absolute;
+      left: rem(10);
+    }
+  }
+}
+
+//==============================================================================
+                                //Login screen
+//==============================================================================
+
+.login {
+  input {
+    display: block;
+    width: 25%;
+    height: rem(30);
+    margin: rem(10) auto;
+  }
+}
+
+//==============================================================================
+                                //Rooms list
+//==============================================================================
+
+.room-list {
+  background: $light;
+  border-right: 1px solid $dark;
+  float: left;
+  height: rem(450);
+  overflow: scroll;
+  width: 25%;
+}
+
+//==============================================================================
+                                //Room section
+//==============================================================================
+
+.room {
+  float: right;
+  height: rem(450);
+  position: relative;
+  width: 75%;
+}
+
+.room-name {
+  background: $light;
+  border-bottom: solid 1px, $dark;
+  height: rem(60);
+
+  span {
+    display: block;
+    text-align: center;
+  }
+}
+
+.chat-list {
+  // margin-bottom: rem0);
+  max-height: rem(340);
+  overflow: scroll;
+}
+
+.message {
+  border-bottom: 1px solid $light;
+  overflow: auto;
+  padding: rem(10);
+
+  * {
+    margin: 0;
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  .username {
+    width: 25%;
+    float: left;
+  }
+
+  .body {
+    width: 60%;
+    float: left;
+    text-align: left;
+  }
+
+  .timestamp {
+    display: block;
+    float: left;
+    text-align: right;
+    width: 15%;
+  }
+}
+
+.new-message {
+  background: $dark;
+  bottom: 0;
+  height: rem(50);
+  padding: rem(10);
+  position: absolute;
+  width: 100%;
+
+  input {
+    height: rem(30);
+    outline: none;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+//

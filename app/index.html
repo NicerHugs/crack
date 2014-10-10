@@ -27,6 +27,71 @@
   </head>
   <body>
 
+    <script type="text/x-handlebars" data-template-name="application">
+      <div class="crack">
+        <header>
+          <a href="#"><h1>crack</h1></a>
+          <a href="#">NicerHugs</a>
+          <a href="#">logout</a>
+        </header>
+        {{outlet}}
+      </div><!--crack-->
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="login">
+      <main class="login">
+        <h1>Welcome to Crack!</h1>
+        <p>Like Slack, but more addicting</p>
+        <h2>Please create a username to start chatting</h2>
+        {{
+          input
+            type="text"
+            value=username
+            action="login"
+            placeholder="username"
+        }}
+      </main>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="index">
+        <main>
+          <section class="room-list">
+            <h2>Rooms</h2>
+            <ul>
+              <li>
+                <a href="#">General</a>
+              </li>
+              <li>
+                <a href="#">Really cool room</a>
+              </li>
+            </ul>
+          </section><!--room-list-->
+          <section class="room">
+            <section class="room-name">
+              <h2>General</h2>
+              <span>the most boring room</span>
+            </section><!--room-->
+            <section class="chat-list">
+              <ul>
+                {{#each chats}}
+                  <li class="message">
+                    <h3 class="username">{{username}}:</h3>
+                    <p class="body">{{message}}</p>
+                    <span class="timestamp">{{timestamp}}</span>
+                  </li>
+                {{/each}}
+              </ul>
+            </section><!--chat-list-->
+            <section class="new-message">
+              {{input
+                type="text" placeholder="what you got to say?"
+                value=newChat
+                action="createChat"}}
+            </section><!--new-message-->
+          <section><!--room-->
+        </main>
+    </script>
+
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -34,12 +99,20 @@
     <script src="../bower_components/handlebars/handlebars.js"></script>
     <script src="../bower_components/ember/ember.js"></script>
     <script src="../bower_components/ember-data/ember-data.js"></script>
+    <script src="../bower_components/firebase/firebase.js"></script>
+    <script src="../bower_components/emberfire/dist/emberfire.js"></script>
+
+
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
-        <script src="scripts/application.js"></script>
-        <script src="scripts/router.js"></script>
+          <script src="scripts/application.js"></script>
+          <script src="scripts/models/chat.js"></script>
+          <script src="scripts/router.js"></script>
+          <script src="scripts/controllers/application_controller.js"></script>
+          <script src="scripts/controllers/login_controller.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>
