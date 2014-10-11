@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+    <title>EmberApp</title>
+
+    <link rel="favicon" type="image/.ico" href="favicon.ico?v1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+
+  </head>
+  <body>
+
+    <script type="text/x-handlebars" data-template-name="application">
+      <div class="crack">
+        <header>
+          <a href="#"><h1>crack</h1></a>
+          {{#if currentUser}}
+            {{input placeholder="search chats" class="search" type="text" action="search" on="key-up"}}
+            <a class="logout" href="#/login" {{action "logout"}}>logout</a>
+            <a class="logged-in-user" href="#">{{currentUser.username}}</a>
+          {{else}}
+            {{#link-to "login"}}login{{/link-to}}
+          {{/if}}
+        </header>
+        {{outlet}}
+      </div><!--crack-->
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="login">
+      <main class="login">
+        <h1>Welcome to Crack!</h1>
+        <p>Like Slack, but more addicting</p>
+        <h2>Create a username to start chatting</h2>
+        {{
+          input
+            type="text"
+            value=username
+            action="login"
+            placeholder="username"
+        }}
+      </main>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="index">
+        <main>
+          <section class="room-list">
+            <h2>Rooms</h2>
+            <ul>
+              <li>
+                <a href="#">General</a>
+              </li>
+              <li>
+                <a href="#">Really cool room</a>
+              </li>
+            </ul>
+          </section><!--room-list-->
+          <section class="room">
+            <section class="room-name">
+              <h2>General</h2>
+              <span>the most boring room</span>
+            </section><!--room-->
+            <section class="chat-list">
+              <ul>
+                {{#each}}
+                  <li class="message">
+                    <h3 class="username">{{username}}:</h3>
+                    <p class="body">{{message}}</p>
+                    <span class="timestamp">{{displayTime}}</span>
+                  </li>
+                {{/each}}
+              </ul>
+            </section><!--chat-list-->
+            <section class="new-message">
+              {{input
+                type="text" placeholder="what you got to say?"
+                value=newChat
+                action="createChat"}}
+            </section><!--new-message-->
+          <section><!--room-->
+        </main>
+    </script>
+
+
+    <script src="scripts/vendor.js"></script>
+
+        <script src="scripts/main.js"></script>
+</body>
+</html>
